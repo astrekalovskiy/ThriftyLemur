@@ -1,20 +1,28 @@
+{% extends "./base.html"%}
+{% block title %}Список товаров в магазине{% endblock %}
+{% block content %}
 {% if store %}
-    <h2>Название торговой точки</h2>
-    <p>{{store.name}}</p>
+    <h4>Название торговой точки</h4>
+    <h3>{{store.name}}</h3>
     {% if products %}
-        <table>
-            <tr>
-                <th>id</th>
-                <th>Название</th>
-                <th>Цена</th>
-            </tr>
-        {% for p in products %}
-            <tr>
-                <td>{{p.id}}</td>
-                <td>{{p.name}}</td>
-                <td>{{p.price}}</td>
-            </tr>
-        {% endfor %}
+        <table class="table table-sm">
+            <caption>Список товаров в магазине</caption>
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Название</th>
+                    <th scope="col">Цена</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in products %}
+                    <tr>
+                        <td>{{p.id}}</td>
+                        <td>{{p.name}}</td>
+                        <td>{{p.price}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
     {% else %}
 
@@ -22,3 +30,4 @@
 {% else %}
     <p>No store</p>
 {% endif %}
+{% endblock %}

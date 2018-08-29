@@ -1,0 +1,41 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+<title>{% block title %}{% endblock %}</title>
+{% bootstrap_css %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Thrifty Lemur</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'sanek:index' %}">Главная <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="{% url 'sanek:stores' %}">Магазины </a>
+      <a class="nav-item nav-link" href="{% url 'sanek:products' %}">Товары </a>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid pt-3">
+    <div class="row align-items-start">
+        <div class="col">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <div class="row align-items-end  fixed-bottom">
+        <div class="col">
+            {% block footer %}
+            <hr>
+            <p>footer</p>
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% bootstrap_javascript jquery='full' %}
+{# Read the documentation for more information #}

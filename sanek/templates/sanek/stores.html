@@ -1,9 +1,78 @@
-{% if stores %}
-    <ul>
+{% extends "./base.html"%}
+{% block title %}Список магазинов{% endblock %}
+{% block content %}
+ <div class="row">
+    <div class="col-3">
+    {% if stores %}
+        <div class="list-group">
         {% for s in stores %}
-            <li><a href="{% url 'sanek:store' store_id=s.id %}">{{s.name}}</a></li>
+                    <a class="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-center" href="{% url 'sanek:store' store_id=s.id %}">{{s.name}}
+                    <span class="badge badge-primary badge-pill">
+                        {% if amountOfGoods %}
+                        {% else %}
+                        0
+                        {% endif %}
+                        </span>
+                    </a>
         {% endfor %}
-    </ul>
-{% else %}
+    </div>
+    {% else %}
     <p>No stores</p>
-{% endif %}
+    {% endif %}
+    </div>
+    <div class="col-3">
+    {% if stores %}
+        <div class="list-group">
+        {% for s in stores %}
+                    <a class="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-center" href="{% url 'sanek:store' store_id=s.id %}">{{s.name}}
+                    <span class="badge badge-primary badge-pill">
+                        {% if amountOfGoods %}
+                        {% else %}
+                        0
+                        {% endif %}
+                        </span>
+                    </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No stores</p>
+    {% endif %}
+    </div>
+    <div class="col-3">
+    {% if stores %}
+        <div class="list-group">
+        {% for s in stores %}
+                    <a class="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-center" href="{% url 'sanek:store' store_id=s.id %}">{{s.name}}
+                    <span class="badge badge-primary badge-pill">
+                        {% if amountOfGoods %}
+                        {% else %}
+                        0
+                        {% endif %}
+                        </span>
+                    </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No stores</p>
+    {% endif %}
+    </div>
+    <div class="col-3">
+    {% if stores %}
+        <div class="list-group">
+        {% for s in stores %}
+                    <a class="list-group-item list-group-item-action list-group-item-secondary d-flex justify-content-between align-items-center" href="{% url 'sanek:store' store_id=s.id %}">{{s.name}}
+                    <span class="badge badge-primary badge-pill">
+                        {% if amountOfGoods %}
+                        {% else %}
+                        0
+                        {% endif %}
+                        </span>
+                    </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No stores</p>
+    {% endif %}
+    </div>
+ </div>
+{% endblock %}

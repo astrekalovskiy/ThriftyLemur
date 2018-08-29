@@ -32,7 +32,9 @@ def storesAll(request):
         stores = Store.objects.all()
     except Product.DoesNotExist:
         raise Http404("Магазины не найдены")
-    return render(request, 'sanek/stores.html', {'stores': stores})
+    return render(request, 'sanek/stores.html', {
+        'stores': stores,
+    })
 
 def product(request, product_id):
     try:
