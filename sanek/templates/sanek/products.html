@@ -1,0 +1,16 @@
+{% if products %}
+    <ul>
+        {% for p in products %}
+            <li>
+                <p><a href="{% url 'sanek:product' product_id=p.id%}">{{p.name}}</a>
+                {% if stores %}
+                    <nobr>{{p.store}}</nobr></p>
+                {% else %}
+                    No store</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No products</p>
+{% endif %}

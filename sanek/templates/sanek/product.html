@@ -1,0 +1,16 @@
+{% if product %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Название</th>
+            <th>Цена</th>
+        </tr>
+        <tr>
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+        </tr>
+    </table>
+{% else %}
+    <p>No stores</p>
+{% endif %}

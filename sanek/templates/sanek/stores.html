@@ -1,0 +1,9 @@
+{% if stores %}
+    <ul>
+        {% for s in stores %}
+            <li><a href="{% url 'sanek:store' store_id=s.id %}">{{s.name}}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No stores</p>
+{% endif %}
